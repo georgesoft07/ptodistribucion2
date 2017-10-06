@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="71500f6daca94081a9a9f5c35ac2b564" Name="Diagram1" ZoomLevel="29">
+        <EntityTypeShape EntityType="BDDISTRIBUCIONModel.ciudad" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDDISTRIBUCIONModel.CLIENTE" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDDISTRIBUCIONModel.distrito" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDDISTRIBUCIONModel.pais" Width="1.5" PointX="0.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDDISTRIBUCIONModel.paisdepa" Width="1.5" PointX="0.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDDISTRIBUCIONModel.RUTA" Width="1.5" PointX="0.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDDISTRIBUCIONModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDDISTRIBUCIONModel.Tipo_Pago" Width="1.5" PointX="0.75" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDDISTRIBUCIONModel.TIPONEGOCIO" Width="1.5" PointX="0.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDDISTRIBUCIONModel.TIPOPRE" Width="1.5" PointX="0.75" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDDISTRIBUCIONModel.ACCESO" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="BDDISTRIBUCIONModel.FK_CLIENTE_ciudad" ManuallyRouted="false" />
+        <AssociationConnector Association="BDDISTRIBUCIONModel.FK_CLIENTE_distrito" ManuallyRouted="false" />
+        <AssociationConnector Association="BDDISTRIBUCIONModel.FK_CLIENTE_pais" ManuallyRouted="false" />
+        <AssociationConnector Association="BDDISTRIBUCIONModel.FK_CLIENTE_paisdepa" ManuallyRouted="false" />
+        <AssociationConnector Association="BDDISTRIBUCIONModel.FK_CLIENTE_RUTA" ManuallyRouted="false" />
+        <AssociationConnector Association="BDDISTRIBUCIONModel.FK_CLIENTE_Tipo_Pago" ManuallyRouted="false" />
+        <AssociationConnector Association="BDDISTRIBUCIONModel.FK_CLIENTE_TIPONEGOCIO" ManuallyRouted="false" />
+        <AssociationConnector Association="BDDISTRIBUCIONModel.FK_CLIENTE_TIPOPRE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

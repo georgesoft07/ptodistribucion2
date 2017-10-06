@@ -1,0 +1,5 @@
+C:\C\PTODISTRIBUCION2\SLNPTO\InterfacesTipoNegocio\bin\Debug\InterfacesTipoNegocio.dll
+C:\C\PTODISTRIBUCION2\SLNPTO\InterfacesTipoNegocio\bin\Debug\InterfacesTipoNegocio.pdb
+C:\C\PTODISTRIBUCION2\SLNPTO\InterfacesTipoNegocio\obj\Debug\InterfacesTipoNegocio.csprojResolveAssemblyReference.cache
+C:\C\PTODISTRIBUCION2\SLNPTO\InterfacesTipoNegocio\obj\Debug\InterfacesTipoNegocio.dll
+C:\C\PTODISTRIBUCION2\SLNPTO\InterfacesTipoNegocio\obj\Debug\InterfacesTipoNegocio.pdb

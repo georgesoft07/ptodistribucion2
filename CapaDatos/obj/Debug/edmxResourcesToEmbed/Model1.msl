@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDDISTRIBUCIONModelStoreContainer" CdmEntityContainer="BDDISTRIBUCIONEntities">
+    <EntitySetMapping Name="ciudad">
+      <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.ciudad">
+        <MappingFragment StoreEntitySet="ciudad">
+          <ScalarProperty Name="CODCIUDAD" ColumnName="CODCIUDAD" />
+          <ScalarProperty Name="DESCIUDAD" ColumnName="DESCIUDAD" />
+          <ScalarProperty Name="CODPAIS" ColumnName="CODPAIS" />
+          <ScalarProperty Name="iddepa" ColumnName="iddepa" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="datetrans" ColumnName="datetrans" />
+          <ScalarProperty Name="trans" ColumnName="trans" />
+          <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTE">
+      <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+          <ScalarProperty Name="codcliente" ColumnName="codcliente" />
+          <ScalarProperty Name="DATETRANS" ColumnName="DATETRANS" />
+          <ScalarProperty Name="TRANS" ColumnName="TRANS" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="DESCUENTO" ColumnName="DESCUENTO" />
+          <ScalarProperty Name="CTA_LET" ColumnName="CTA_LET" />
+          <ScalarProperty Name="CTA_ANT" ColumnName="CTA_ANT" />
+          <ScalarProperty Name="CTA_VTA" ColumnName="CTA_VTA" />
+          <ScalarProperty Name="SALDODISPONIBLE" ColumnName="SALDODISPONIBLE" />
+          <ScalarProperty Name="MTOLIMCRED" ColumnName="MTOLIMCRED" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="ruc" ColumnName="ruc" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="CODTIPOPAGO" ColumnName="CODTIPOPAGO" />
+          <ScalarProperty Name="CODTIPCLI" ColumnName="CODTIPCLI" />
+          <ScalarProperty Name="CODCIUDAD" ColumnName="CODCIUDAD" />
+          <ScalarProperty Name="codvend" ColumnName="codvend" />
+          <ScalarProperty Name="CuotaT" ColumnName="CuotaT" />
+          <ScalarProperty Name="CuotaS" ColumnName="CuotaS" />
+          <ScalarProperty Name="cuotaD" ColumnName="cuotaD" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="razonsocial" ColumnName="razonsocial" />
+          <ScalarProperty Name="materno" ColumnName="materno" />
+          <ScalarProperty Name="paterno" ColumnName="paterno" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="codzona" ColumnName="codzona" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="TIPCREDFAC" ColumnName="TIPCREDFAC" />
+          <ScalarProperty Name="MONEDACRED" ColumnName="MONEDACRED" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="contacto" ColumnName="contacto" />
+          <ScalarProperty Name="telecont" ColumnName="telecont" />
+          <ScalarProperty Name="celucont" ColumnName="celucont" />
+          <ScalarProperty Name="emailcont" ColumnName="emailcont" />
+          <ScalarProperty Name="faxcliente" ColumnName="faxcliente" />
+          <ScalarProperty Name="DATOADJUNTO" ColumnName="DATOADJUNTO" />
+          <ScalarProperty Name="coddis" ColumnName="coddis" />
+          <ScalarProperty Name="iddepa" ColumnName="iddepa" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="creacion" ColumnName="creacion" />
+          <ScalarProperty Name="empleado" ColumnName="empleado" />
+          <ScalarProperty Name="RUTA" ColumnName="RUTA" />
+          <ScalarProperty Name="TIPONEGOCIO" ColumnName="TIPONEGOCIO" />
+          <ScalarProperty Name="CODTIPOPRE" ColumnName="CODTIPOPRE" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="imagen2" ColumnName="imagen2" />
+          <ScalarProperty Name="MPERCEP" ColumnName="MPERCEP" />
+          <ScalarProperty Name="ORT" ColumnName="ORT" />
+          <ScalarProperty Name="CODSegCliente" ColumnName="CODSegCliente" />
+          <ScalarProperty Name="CodCatCliente" ColumnName="CodCatCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="distrito">
+      <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.distrito">
+        <MappingFragment StoreEntitySet="distrito">
+          <ScalarProperty Name="CodDis" ColumnName="CodDis" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="codprovi" ColumnName="codprovi" />
+          <ScalarProperty Name="CODPAIS" ColumnName="CODPAIS" />
+          <ScalarProperty Name="iddepa" ColumnName="iddepa" />
+          <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pais">
+      <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.pais">
+        <MappingFragment StoreEntitySet="pais">
+          <ScalarProperty Name="DATETRANS" ColumnName="DATETRANS" />
+          <ScalarProperty Name="TRANS" ColumnName="TRANS" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="DESPAIS" ColumnName="DESPAIS" />
+          <ScalarProperty Name="CODPAIS" ColumnName="CODPAIS" />
+          <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="paisdepa">
+      <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.paisdepa">
+        <MappingFragment StoreEntitySet="paisdepa">
+          <ScalarProperty Name="iddepa" ColumnName="iddepa" />
+          <ScalarProperty Name="depa" ColumnName="depa" />
+          <ScalarProperty Name="codpais" ColumnName="codpais" />
+          <ScalarProperty Name="codempresa" ColumnName="codempresa" />
+          <ScalarProperty Name="trans" ColumnName="trans" />
+          <ScalarProperty Name="datetrans" ColumnName="datetrans" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RUTA">
+      <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.RUTA">
+        <MappingFragment StoreEntitySet="RUTA">
+          <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Pago">
+      <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.Tipo_Pago">
+        <MappingFragment StoreEntitySet="Tipo_Pago">
+          <ScalarProperty Name="DATETRANS" ColumnName="DATETRANS" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="TRANS" ColumnName="TRANS" />
+          <ScalarProperty Name="DSTIPOPAGO" ColumnName="DSTIPOPAGO" />
+          <ScalarProperty Name="CODTIPOPAGO" ColumnName="CODTIPOPAGO" />
+          <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPONEGOCIO">
+      <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.TIPONEGOCIO">
+        <MappingFragment StoreEntitySet="TIPONEGOCIO">
+          <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOPRE">
+      <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.TIPOPRE">
+        <MappingFragment StoreEntitySet="TIPOPRE">
+          <ScalarProperty Name="DATETRANS" ColumnName="DATETRANS" />
+          <ScalarProperty Name="TRANS" ColumnName="TRANS" />
+          <ScalarProperty Name="DSTIPOPRE" ColumnName="DSTIPOPRE" />
+          <ScalarProperty Name="CODTIPOPRE" ColumnName="CODTIPOPRE" />
+          <ScalarProperty Name="codmon" ColumnName="codmon" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+          <ScalarProperty Name="APLIOTROSCTO" ColumnName="APLIOTROSCTO" />
+          <ScalarProperty Name="DS" ColumnName="DS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACCESO">
+      <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.ACCESO">
+        <MappingFragment StoreEntitySet="ACCESO">
+          <ScalarProperty Name="CodEmpresa" ColumnName="CodEmpresa" />
+          <ScalarProperty Name="cdnivel" ColumnName="cdnivel" />
+          <ScalarProperty Name="cdmodulo" ColumnName="cdmodulo" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

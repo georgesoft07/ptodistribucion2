@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDDISTRIBUCIONModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BDDISTRIBUCION.dbo.ACCESO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="ACCESO">
+    <Key>
+      <PropertyRef Name="cdmodulo" />
+      <PropertyRef Name="activo" />
+    </Key>
+    <Property Name="CodEmpresa" Type="varchar(max)" />
+    <Property Name="cdnivel" Type="char" MaxLength="10" />
+    <Property Name="cdmodulo" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ciudad">
+    <Key>
+      <PropertyRef Name="CODCIUDAD" />
+    </Key>
+    <Property Name="CODCIUDAD" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="DESCIUDAD" Type="varchar" MaxLength="50" />
+    <Property Name="CODPAIS" Type="varchar" MaxLength="4" />
+    <Property Name="iddepa" Type="varchar" MaxLength="4" />
+    <Property Name="estado" Type="bit" />
+    <Property Name="datetrans" Type="datetime" />
+    <Property Name="trans" Type="bit" />
+    <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="codcliente" />
+    </Key>
+    <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="codcliente" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DATETRANS" Type="datetime" />
+    <Property Name="TRANS" Type="bit" />
+    <Property Name="ESTADO" Type="bit" />
+    <Property Name="DESCUENTO" Type="numeric" Precision="9" Scale="3" />
+    <Property Name="CTA_LET" Type="varchar" MaxLength="15" />
+    <Property Name="CTA_ANT" Type="varchar" MaxLength="15" />
+    <Property Name="CTA_VTA" Type="varchar" MaxLength="15" />
+    <Property Name="SALDODISPONIBLE" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="MTOLIMCRED" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="telefono" Type="char" MaxLength="18" />
+    <Property Name="ruc" Type="varchar" MaxLength="11" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" />
+    <Property Name="CODTIPOPAGO" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CODTIPCLI" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="CODCIUDAD" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="codvend" Type="varchar" MaxLength="4" />
+    <Property Name="CuotaT" Type="numeric" Precision="9" Scale="4" />
+    <Property Name="CuotaS" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="cuotaD" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="dni" Type="varchar" MaxLength="10" />
+    <Property Name="razonsocial" Type="varchar" MaxLength="150" />
+    <Property Name="materno" Type="varchar" MaxLength="30" />
+    <Property Name="paterno" Type="varchar" MaxLength="30" />
+    <Property Name="nombres" Type="varchar" MaxLength="150" />
+    <Property Name="codzona" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="30" />
+    <Property Name="TIPCREDFAC" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="MONEDACRED" Type="char" MaxLength="2" />
+    <Property Name="pais" Type="varchar" MaxLength="4" />
+    <Property Name="contacto" Type="varchar" MaxLength="150" />
+    <Property Name="telecont" Type="varchar" MaxLength="50" />
+    <Property Name="celucont" Type="varchar" MaxLength="50" />
+    <Property Name="emailcont" Type="varchar" MaxLength="50" />
+    <Property Name="faxcliente" Type="varchar" MaxLength="50" />
+    <Property Name="DATOADJUNTO" Type="varchar" MaxLength="500" />
+    <Property Name="coddis" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="iddepa" Type="varchar" MaxLength="4" />
+    <Property Name="tipo" Type="bit" />
+    <Property Name="creacion" Type="datetime" />
+    <Property Name="empleado" Type="bit" />
+    <Property Name="RUTA" Type="varchar" MaxLength="20" />
+    <Property Name="TIPONEGOCIO" Type="varchar" MaxLength="20" />
+    <Property Name="CODTIPOPRE" Type="varchar" MaxLength="20" />
+    <Property Name="imagen" Type="varchar" MaxLength="50" />
+    <Property Name="imagen2" Type="varchar" MaxLength="100" />
+    <Property Name="MPERCEP" Type="numeric" Precision="20" Scale="4" />
+    <Property Name="ORT" Type="bit" />
+    <Property Name="CODSegCliente" Type="varchar" MaxLength="50" />
+    <Property Name="CodCatCliente" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="distrito">
+    <Key>
+      <PropertyRef Name="CodDis" />
+    </Key>
+    <Property Name="CodDis" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="70" />
+    <Property Name="codprovi" Type="varchar" MaxLength="4" />
+    <Property Name="CODPAIS" Type="nvarchar" MaxLength="255" />
+    <Property Name="iddepa" Type="varchar" MaxLength="4" />
+    <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="pais">
+    <Key>
+      <PropertyRef Name="CODPAIS" />
+    </Key>
+    <Property Name="DATETRANS" Type="datetime" />
+    <Property Name="TRANS" Type="bit" />
+    <Property Name="ESTADO" Type="bit" />
+    <Property Name="DESPAIS" Type="varchar" MaxLength="50" />
+    <Property Name="CODPAIS" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="COD_EMPRESA" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="paisdepa">
+    <Key>
+      <PropertyRef Name="iddepa" />
+    </Key>
+    <Property Name="iddepa" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="depa" Type="varchar" MaxLength="30" />
+    <Property Name="codpais" Type="varchar" MaxLength="10" />
+    <Property Name="codempresa" Type="varchar" MaxLength="10" />
+    <Property Name="trans" Type="bit" />
+    <Property Name="datetrans" Type="datetime" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BDDISTRIBUCION.dbo.PPP' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="PPP">
+          <Property Name="cod" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="RUTA">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" />
+    <Property Name="CODIGO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BDDISTRIBUCION.dbo.TABLAPRUEBA' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="TABLAPRUEBA">
+          <Property Name="COD" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="Tipo_Pago">
+    <Key>
+      <PropertyRef Name="CODTIPOPAGO" />
+    </Key>
+    <Property Name="DATETRANS" Type="datetime" />
+    <Property Name="ESTADO" Type="bit" />
+    <Property Name="TRANS" Type="bit" />
+    <Property Name="DSTIPOPAGO" Type="varchar" MaxLength="50" />
+    <Property Name="CODTIPOPAGO" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIPONEGOCIO">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" />
+    <Property Name="CODIGO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TIPOPRE">
+    <Key>
+      <PropertyRef Name="CODTIPOPRE" />
+    </Key>
+    <Property Name="DATETRANS" Type="datetime" />
+    <Property Name="TRANS" Type="bit" />
+    <Property Name="DSTIPOPRE" Type="varchar" MaxLength="30" />
+    <Property Name="CODTIPOPRE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="codmon" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="estado" Type="bit" />
+    <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" />
+    <Property Name="APLIOTROSCTO" Type="bit" />
+    <Property Name="DS" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_CLIENTE_ciudad">
+    <End Role="ciudad" Type="Self.ciudad" Multiplicity="1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ciudad">
+        <PropertyRef Name="CODCIUDAD" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="CODCIUDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_distrito">
+    <End Role="distrito" Type="Self.distrito" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="distrito">
+        <PropertyRef Name="CodDis" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="coddis" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_pais">
+    <End Role="pais" Type="Self.pais" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pais">
+        <PropertyRef Name="CODPAIS" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_paisdepa">
+    <End Role="paisdepa" Type="Self.paisdepa" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paisdepa">
+        <PropertyRef Name="iddepa" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="iddepa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_RUTA">
+    <End Role="RUTA" Type="Self.RUTA" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RUTA">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="RUTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_Tipo_Pago">
+    <End Role="Tipo_Pago" Type="Self.Tipo_Pago" Multiplicity="1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Pago">
+        <PropertyRef Name="CODTIPOPAGO" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="CODTIPOPAGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_TIPONEGOCIO">
+    <End Role="TIPONEGOCIO" Type="Self.TIPONEGOCIO" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPONEGOCIO">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="TIPONEGOCIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_TIPOPRE">
+    <End Role="TIPOPRE" Type="Self.TIPOPRE" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPOPRE">
+        <PropertyRef Name="CODTIPOPRE" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="CODTIPOPRE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDDISTRIBUCIONModelStoreContainer">
+    <EntitySet Name="ciudad" EntityType="Self.ciudad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="distrito" EntityType="Self.distrito" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pais" EntityType="Self.pais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="paisdepa" EntityType="Self.paisdepa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RUTA" EntityType="Self.RUTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tipo_Pago" EntityType="Self.Tipo_Pago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPONEGOCIO" EntityType="Self.TIPONEGOCIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPOPRE" EntityType="Self.TIPOPRE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACCESO" EntityType="Self.ACCESO" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ACCESO].[CodEmpresa] AS [CodEmpresa], 
+    [ACCESO].[cdnivel] AS [cdnivel], 
+    [ACCESO].[cdmodulo] AS [cdmodulo], 
+    [ACCESO].[activo] AS [activo]
+    FROM [dbo].[ACCESO] AS [ACCESO]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_CLIENTE_ciudad" Association="Self.FK_CLIENTE_ciudad">
+      <End Role="ciudad" EntitySet="ciudad" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_distrito" Association="Self.FK_CLIENTE_distrito">
+      <End Role="distrito" EntitySet="distrito" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_pais" Association="Self.FK_CLIENTE_pais">
+      <End Role="pais" EntitySet="pais" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_paisdepa" Association="Self.FK_CLIENTE_paisdepa">
+      <End Role="paisdepa" EntitySet="paisdepa" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_RUTA" Association="Self.FK_CLIENTE_RUTA">
+      <End Role="RUTA" EntitySet="RUTA" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_Tipo_Pago" Association="Self.FK_CLIENTE_Tipo_Pago">
+      <End Role="Tipo_Pago" EntitySet="Tipo_Pago" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_TIPONEGOCIO" Association="Self.FK_CLIENTE_TIPONEGOCIO">
+      <End Role="TIPONEGOCIO" EntitySet="TIPONEGOCIO" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_TIPOPRE" Association="Self.FK_CLIENTE_TIPOPRE">
+      <End Role="TIPOPRE" EntitySet="TIPOPRE" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDDISTRIBUCIONModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ciudad">
+    <Key>
+      <PropertyRef Name="CODCIUDAD" />
+    </Key>
+    <Property Name="CODCIUDAD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCIUDAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CODPAIS" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="iddepa" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Boolean" />
+    <Property Name="datetrans" Type="DateTime" Precision="3" />
+    <Property Name="trans" Type="Boolean" />
+    <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_ciudad" FromRole="ciudad" ToRole="CLIENTE" />
+  </EntityType>
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="codcliente" />
+    </Key>
+    <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="codcliente" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DATETRANS" Type="DateTime" Precision="3" />
+    <Property Name="TRANS" Type="Boolean" />
+    <Property Name="ESTADO" Type="Boolean" />
+    <Property Name="DESCUENTO" Type="Decimal" Precision="9" Scale="3" />
+    <Property Name="CTA_LET" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CTA_ANT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CTA_VTA" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SALDODISPONIBLE" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="MTOLIMCRED" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="telefono" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+    <Property Name="ruc" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CODTIPOPAGO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CODTIPCLI" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CODCIUDAD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="codvend" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CuotaT" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="CuotaS" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="cuotaD" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="dni" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="razonsocial" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="materno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="paterno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nombres" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="codzona" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TIPCREDFAC" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MONEDACRED" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="pais" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="contacto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="telecont" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="celucont" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="emailcont" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="faxcliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DATOADJUNTO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="coddis" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="iddepa" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="tipo" Type="Boolean" />
+    <Property Name="creacion" Type="DateTime" Precision="3" />
+    <Property Name="empleado" Type="Boolean" />
+    <Property Name="RUTA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TIPONEGOCIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CODTIPOPRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="imagen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="imagen2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MPERCEP" Type="Decimal" Precision="20" Scale="4" />
+    <Property Name="ORT" Type="Boolean" />
+    <Property Name="CODSegCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CodCatCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ciudad" Relationship="Self.FK_CLIENTE_ciudad" FromRole="CLIENTE" ToRole="ciudad" />
+    <NavigationProperty Name="distrito" Relationship="Self.FK_CLIENTE_distrito" FromRole="CLIENTE" ToRole="distrito" />
+    <NavigationProperty Name="pais1" Relationship="Self.FK_CLIENTE_pais" FromRole="CLIENTE" ToRole="pais" />
+    <NavigationProperty Name="paisdepa" Relationship="Self.FK_CLIENTE_paisdepa" FromRole="CLIENTE" ToRole="paisdepa" />
+    <NavigationProperty Name="RUTA1" Relationship="Self.FK_CLIENTE_RUTA" FromRole="CLIENTE" ToRole="RUTA" />
+    <NavigationProperty Name="Tipo_Pago" Relationship="Self.FK_CLIENTE_Tipo_Pago" FromRole="CLIENTE" ToRole="Tipo_Pago" />
+    <NavigationProperty Name="TIPONEGOCIO1" Relationship="Self.FK_CLIENTE_TIPONEGOCIO" FromRole="CLIENTE" ToRole="TIPONEGOCIO" />
+    <NavigationProperty Name="TIPOPRE" Relationship="Self.FK_CLIENTE_TIPOPRE" FromRole="CLIENTE" ToRole="TIPOPRE" />
+  </EntityType>
+  <EntityType Name="distrito">
+    <Key>
+      <PropertyRef Name="CodDis" />
+    </Key>
+    <Property Name="CodDis" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="codprovi" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CODPAIS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="iddepa" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_distrito" FromRole="distrito" ToRole="CLIENTE" />
+  </EntityType>
+  <EntityType Name="pais">
+    <Key>
+      <PropertyRef Name="CODPAIS" />
+    </Key>
+    <Property Name="DATETRANS" Type="DateTime" Precision="3" />
+    <Property Name="TRANS" Type="Boolean" />
+    <Property Name="ESTADO" Type="Boolean" />
+    <Property Name="DESPAIS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CODPAIS" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COD_EMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_pais" FromRole="pais" ToRole="CLIENTE" />
+  </EntityType>
+  <EntityType Name="paisdepa">
+    <Key>
+      <PropertyRef Name="iddepa" />
+    </Key>
+    <Property Name="iddepa" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="depa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="codpais" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="codempresa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="trans" Type="Boolean" />
+    <Property Name="datetrans" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_paisdepa" FromRole="paisdepa" ToRole="CLIENTE" />
+  </EntityType>
+  <EntityType Name="RUTA">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_RUTA" FromRole="RUTA" ToRole="CLIENTE" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tipo_Pago">
+    <Key>
+      <PropertyRef Name="CODTIPOPAGO" />
+    </Key>
+    <Property Name="DATETRANS" Type="DateTime" Precision="3" />
+    <Property Name="ESTADO" Type="Boolean" />
+    <Property Name="TRANS" Type="Boolean" />
+    <Property Name="DSTIPOPAGO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CODTIPOPAGO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_Tipo_Pago" FromRole="Tipo_Pago" ToRole="CLIENTE" />
+  </EntityType>
+  <EntityType Name="TIPONEGOCIO">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_TIPONEGOCIO" FromRole="TIPONEGOCIO" ToRole="CLIENTE" />
+  </EntityType>
+  <EntityType Name="TIPOPRE">
+    <Key>
+      <PropertyRef Name="CODTIPOPRE" />
+    </Key>
+    <Property Name="DATETRANS" Type="DateTime" Precision="3" />
+    <Property Name="TRANS" Type="Boolean" />
+    <Property Name="DSTIPOPRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CODTIPOPRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="codmon" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="Boolean" />
+    <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="APLIOTROSCTO" Type="Boolean" />
+    <Property Name="DS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_TIPOPRE" FromRole="TIPOPRE" ToRole="CLIENTE" />
+  </EntityType>
+  <EntityType Name="ACCESO">
+    <Key>
+      <PropertyRef Name="cdmodulo" />
+      <PropertyRef Name="activo" />
+    </Key>
+    <Property Name="CodEmpresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cdnivel" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="cdmodulo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CLIENTE_ciudad">
+    <End Role="ciudad" Type="Self.ciudad" Multiplicity="1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ciudad">
+        <PropertyRef Name="CODCIUDAD" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="CODCIUDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_distrito">
+    <End Role="distrito" Type="Self.distrito" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="distrito">
+        <PropertyRef Name="CodDis" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="coddis" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_pais">
+    <End Role="pais" Type="Self.pais" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pais">
+        <PropertyRef Name="CODPAIS" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_paisdepa">
+    <End Role="paisdepa" Type="Self.paisdepa" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paisdepa">
+        <PropertyRef Name="iddepa" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="iddepa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_RUTA">
+    <End Role="RUTA" Type="Self.RUTA" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RUTA">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="RUTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_Tipo_Pago">
+    <End Role="Tipo_Pago" Type="Self.Tipo_Pago" Multiplicity="1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Pago">
+        <PropertyRef Name="CODTIPOPAGO" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="CODTIPOPAGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_TIPONEGOCIO">
+    <End Role="TIPONEGOCIO" Type="Self.TIPONEGOCIO" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPONEGOCIO">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="TIPONEGOCIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CLIENTE_TIPOPRE">
+    <End Role="TIPOPRE" Type="Self.TIPOPRE" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPOPRE">
+        <PropertyRef Name="CODTIPOPRE" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="CODTIPOPRE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDDISTRIBUCIONEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ciudad" EntityType="Self.ciudad" />
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+    <EntitySet Name="distrito" EntityType="Self.distrito" />
+    <EntitySet Name="pais" EntityType="Self.pais" />
+    <EntitySet Name="paisdepa" EntityType="Self.paisdepa" />
+    <EntitySet Name="RUTA" EntityType="Self.RUTA" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Tipo_Pago" EntityType="Self.Tipo_Pago" />
+    <EntitySet Name="TIPONEGOCIO" EntityType="Self.TIPONEGOCIO" />
+    <EntitySet Name="TIPOPRE" EntityType="Self.TIPOPRE" />
+    <EntitySet Name="ACCESO" EntityType="Self.ACCESO" />
+    <AssociationSet Name="FK_CLIENTE_ciudad" Association="Self.FK_CLIENTE_ciudad">
+      <End Role="ciudad" EntitySet="ciudad" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_distrito" Association="Self.FK_CLIENTE_distrito">
+      <End Role="distrito" EntitySet="distrito" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_pais" Association="Self.FK_CLIENTE_pais">
+      <End Role="pais" EntitySet="pais" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_paisdepa" Association="Self.FK_CLIENTE_paisdepa">
+      <End Role="paisdepa" EntitySet="paisdepa" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_RUTA" Association="Self.FK_CLIENTE_RUTA">
+      <End Role="RUTA" EntitySet="RUTA" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_Tipo_Pago" Association="Self.FK_CLIENTE_Tipo_Pago">
+      <End Role="Tipo_Pago" EntitySet="Tipo_Pago" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_TIPONEGOCIO" Association="Self.FK_CLIENTE_TIPONEGOCIO">
+      <End Role="TIPONEGOCIO" EntitySet="TIPONEGOCIO" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CLIENTE_TIPOPRE" Association="Self.FK_CLIENTE_TIPOPRE">
+      <End Role="TIPOPRE" EntitySet="TIPOPRE" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

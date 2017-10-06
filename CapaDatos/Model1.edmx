@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BDDISTRIBUCIONModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BDDISTRIBUCION.dbo.ACCESO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="ACCESO">
+          <Key>
+            <PropertyRef Name="cdmodulo" />
+            <PropertyRef Name="activo" />
+          </Key>
+          <Property Name="CodEmpresa" Type="varchar(max)" />
+          <Property Name="cdnivel" Type="char" MaxLength="10" />
+          <Property Name="cdmodulo" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ciudad">
+          <Key>
+            <PropertyRef Name="CODCIUDAD" />
+          </Key>
+          <Property Name="CODCIUDAD" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="DESCIUDAD" Type="varchar" MaxLength="50" />
+          <Property Name="CODPAIS" Type="varchar" MaxLength="4" />
+          <Property Name="iddepa" Type="varchar" MaxLength="4" />
+          <Property Name="estado" Type="bit" />
+          <Property Name="datetrans" Type="datetime" />
+          <Property Name="trans" Type="bit" />
+          <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="codcliente" />
+          </Key>
+          <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="codcliente" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DATETRANS" Type="datetime" />
+          <Property Name="TRANS" Type="bit" />
+          <Property Name="ESTADO" Type="bit" />
+          <Property Name="DESCUENTO" Type="numeric" Precision="9" Scale="3" />
+          <Property Name="CTA_LET" Type="varchar" MaxLength="15" />
+          <Property Name="CTA_ANT" Type="varchar" MaxLength="15" />
+          <Property Name="CTA_VTA" Type="varchar" MaxLength="15" />
+          <Property Name="SALDODISPONIBLE" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="MTOLIMCRED" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="telefono" Type="char" MaxLength="18" />
+          <Property Name="ruc" Type="varchar" MaxLength="11" />
+          <Property Name="direccion" Type="varchar" MaxLength="100" />
+          <Property Name="CODTIPOPAGO" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CODTIPCLI" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="CODCIUDAD" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="codvend" Type="varchar" MaxLength="4" />
+          <Property Name="CuotaT" Type="numeric" Precision="9" Scale="4" />
+          <Property Name="CuotaS" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="cuotaD" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="dni" Type="varchar" MaxLength="10" />
+          <Property Name="razonsocial" Type="varchar" MaxLength="150" />
+          <Property Name="materno" Type="varchar" MaxLength="30" />
+          <Property Name="paterno" Type="varchar" MaxLength="30" />
+          <Property Name="nombres" Type="varchar" MaxLength="150" />
+          <Property Name="codzona" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="30" />
+          <Property Name="TIPCREDFAC" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="MONEDACRED" Type="char" MaxLength="2" />
+          <Property Name="pais" Type="varchar" MaxLength="4" />
+          <Property Name="contacto" Type="varchar" MaxLength="150" />
+          <Property Name="telecont" Type="varchar" MaxLength="50" />
+          <Property Name="celucont" Type="varchar" MaxLength="50" />
+          <Property Name="emailcont" Type="varchar" MaxLength="50" />
+          <Property Name="faxcliente" Type="varchar" MaxLength="50" />
+          <Property Name="DATOADJUNTO" Type="varchar" MaxLength="500" />
+          <Property Name="coddis" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="iddepa" Type="varchar" MaxLength="4" />
+          <Property Name="tipo" Type="bit" />
+          <Property Name="creacion" Type="datetime" />
+          <Property Name="empleado" Type="bit" />
+          <Property Name="RUTA" Type="varchar" MaxLength="20" />
+          <Property Name="TIPONEGOCIO" Type="varchar" MaxLength="20" />
+          <Property Name="CODTIPOPRE" Type="varchar" MaxLength="20" />
+          <Property Name="imagen" Type="varchar" MaxLength="50" />
+          <Property Name="imagen2" Type="varchar" MaxLength="100" />
+          <Property Name="MPERCEP" Type="numeric" Precision="20" Scale="4" />
+          <Property Name="ORT" Type="bit" />
+          <Property Name="CODSegCliente" Type="varchar" MaxLength="50" />
+          <Property Name="CodCatCliente" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="distrito">
+          <Key>
+            <PropertyRef Name="CodDis" />
+          </Key>
+          <Property Name="CodDis" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="70" />
+          <Property Name="codprovi" Type="varchar" MaxLength="4" />
+          <Property Name="CODPAIS" Type="nvarchar" MaxLength="255" />
+          <Property Name="iddepa" Type="varchar" MaxLength="4" />
+          <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="pais">
+          <Key>
+            <PropertyRef Name="CODPAIS" />
+          </Key>
+          <Property Name="DATETRANS" Type="datetime" />
+          <Property Name="TRANS" Type="bit" />
+          <Property Name="ESTADO" Type="bit" />
+          <Property Name="DESPAIS" Type="varchar" MaxLength="50" />
+          <Property Name="CODPAIS" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="COD_EMPRESA" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="paisdepa">
+          <Key>
+            <PropertyRef Name="iddepa" />
+          </Key>
+          <Property Name="iddepa" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="depa" Type="varchar" MaxLength="30" />
+          <Property Name="codpais" Type="varchar" MaxLength="10" />
+          <Property Name="codempresa" Type="varchar" MaxLength="10" />
+          <Property Name="trans" Type="bit" />
+          <Property Name="datetrans" Type="datetime" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BDDISTRIBUCION.dbo.PPP' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="PPP">
+          <Property Name="cod" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <EntityType Name="RUTA">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" />
+          <Property Name="CODIGO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BDDISTRIBUCION.dbo.TABLAPRUEBA' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="TABLAPRUEBA">
+          <Property Name="COD" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <EntityType Name="Tipo_Pago">
+          <Key>
+            <PropertyRef Name="CODTIPOPAGO" />
+          </Key>
+          <Property Name="DATETRANS" Type="datetime" />
+          <Property Name="ESTADO" Type="bit" />
+          <Property Name="TRANS" Type="bit" />
+          <Property Name="DSTIPOPAGO" Type="varchar" MaxLength="50" />
+          <Property Name="CODTIPOPAGO" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TIPONEGOCIO">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" />
+          <Property Name="CODIGO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TIPOPRE">
+          <Key>
+            <PropertyRef Name="CODTIPOPRE" />
+          </Key>
+          <Property Name="DATETRANS" Type="datetime" />
+          <Property Name="TRANS" Type="bit" />
+          <Property Name="DSTIPOPRE" Type="varchar" MaxLength="30" />
+          <Property Name="CODTIPOPRE" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="codmon" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="estado" Type="bit" />
+          <Property Name="CODEMPRESA" Type="varchar" MaxLength="10" />
+          <Property Name="APLIOTROSCTO" Type="bit" />
+          <Property Name="DS" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_CLIENTE_ciudad">
+          <End Role="ciudad" Type="Self.ciudad" Multiplicity="1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ciudad">
+              <PropertyRef Name="CODCIUDAD" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="CODCIUDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_distrito">
+          <End Role="distrito" Type="Self.distrito" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="distrito">
+              <PropertyRef Name="CodDis" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="coddis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_pais">
+          <End Role="pais" Type="Self.pais" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pais">
+              <PropertyRef Name="CODPAIS" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="pais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_paisdepa">
+          <End Role="paisdepa" Type="Self.paisdepa" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="paisdepa">
+              <PropertyRef Name="iddepa" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="iddepa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_RUTA">
+          <End Role="RUTA" Type="Self.RUTA" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RUTA">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="RUTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_Tipo_Pago">
+          <End Role="Tipo_Pago" Type="Self.Tipo_Pago" Multiplicity="1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Pago">
+              <PropertyRef Name="CODTIPOPAGO" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="CODTIPOPAGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_TIPONEGOCIO">
+          <End Role="TIPONEGOCIO" Type="Self.TIPONEGOCIO" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPONEGOCIO">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="TIPONEGOCIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_TIPOPRE">
+          <End Role="TIPOPRE" Type="Self.TIPOPRE" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOPRE">
+              <PropertyRef Name="CODTIPOPRE" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="CODTIPOPRE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BDDISTRIBUCIONModelStoreContainer">
+          <EntitySet Name="ciudad" EntityType="Self.ciudad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="distrito" EntityType="Self.distrito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pais" EntityType="Self.pais" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="paisdepa" EntityType="Self.paisdepa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RUTA" EntityType="Self.RUTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipo_Pago" EntityType="Self.Tipo_Pago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPONEGOCIO" EntityType="Self.TIPONEGOCIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPOPRE" EntityType="Self.TIPOPRE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ACCESO" EntityType="Self.ACCESO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ACCESO].[CodEmpresa] AS [CodEmpresa], 
+    [ACCESO].[cdnivel] AS [cdnivel], 
+    [ACCESO].[cdmodulo] AS [cdmodulo], 
+    [ACCESO].[activo] AS [activo]
+    FROM [dbo].[ACCESO] AS [ACCESO]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_CLIENTE_ciudad" Association="Self.FK_CLIENTE_ciudad">
+            <End Role="ciudad" EntitySet="ciudad" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_distrito" Association="Self.FK_CLIENTE_distrito">
+            <End Role="distrito" EntitySet="distrito" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_pais" Association="Self.FK_CLIENTE_pais">
+            <End Role="pais" EntitySet="pais" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_paisdepa" Association="Self.FK_CLIENTE_paisdepa">
+            <End Role="paisdepa" EntitySet="paisdepa" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_RUTA" Association="Self.FK_CLIENTE_RUTA">
+            <End Role="RUTA" EntitySet="RUTA" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_Tipo_Pago" Association="Self.FK_CLIENTE_Tipo_Pago">
+            <End Role="Tipo_Pago" EntitySet="Tipo_Pago" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_TIPONEGOCIO" Association="Self.FK_CLIENTE_TIPONEGOCIO">
+            <End Role="TIPONEGOCIO" EntitySet="TIPONEGOCIO" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_TIPOPRE" Association="Self.FK_CLIENTE_TIPOPRE">
+            <End Role="TIPOPRE" EntitySet="TIPOPRE" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BDDISTRIBUCIONModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ciudad">
+          <Key>
+            <PropertyRef Name="CODCIUDAD" />
+          </Key>
+          <Property Name="CODCIUDAD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCIUDAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CODPAIS" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="iddepa" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" />
+          <Property Name="datetrans" Type="DateTime" Precision="3" />
+          <Property Name="trans" Type="Boolean" />
+          <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_ciudad" FromRole="ciudad" ToRole="CLIENTE" />
+        </EntityType>
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="codcliente" />
+          </Key>
+          <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codcliente" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DATETRANS" Type="DateTime" Precision="3" />
+          <Property Name="TRANS" Type="Boolean" />
+          <Property Name="ESTADO" Type="Boolean" />
+          <Property Name="DESCUENTO" Type="Decimal" Precision="9" Scale="3" />
+          <Property Name="CTA_LET" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CTA_ANT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CTA_VTA" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="SALDODISPONIBLE" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="MTOLIMCRED" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="telefono" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="ruc" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CODTIPOPAGO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CODTIPCLI" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CODCIUDAD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codvend" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CuotaT" Type="Decimal" Precision="9" Scale="4" />
+          <Property Name="CuotaS" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="cuotaD" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="dni" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="razonsocial" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="materno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="paterno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="nombres" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="codzona" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TIPCREDFAC" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MONEDACRED" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="pais" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="contacto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="telecont" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="celucont" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="emailcont" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="faxcliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATOADJUNTO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="coddis" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="iddepa" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="tipo" Type="Boolean" />
+          <Property Name="creacion" Type="DateTime" Precision="3" />
+          <Property Name="empleado" Type="Boolean" />
+          <Property Name="RUTA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TIPONEGOCIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CODTIPOPRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="imagen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="imagen2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MPERCEP" Type="Decimal" Precision="20" Scale="4" />
+          <Property Name="ORT" Type="Boolean" />
+          <Property Name="CODSegCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodCatCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ciudad" Relationship="Self.FK_CLIENTE_ciudad" FromRole="CLIENTE" ToRole="ciudad" />
+          <NavigationProperty Name="distrito" Relationship="Self.FK_CLIENTE_distrito" FromRole="CLIENTE" ToRole="distrito" />
+          <NavigationProperty Name="pais1" Relationship="Self.FK_CLIENTE_pais" FromRole="CLIENTE" ToRole="pais" />
+          <NavigationProperty Name="paisdepa" Relationship="Self.FK_CLIENTE_paisdepa" FromRole="CLIENTE" ToRole="paisdepa" />
+          <NavigationProperty Name="RUTA1" Relationship="Self.FK_CLIENTE_RUTA" FromRole="CLIENTE" ToRole="RUTA" />
+          <NavigationProperty Name="Tipo_Pago" Relationship="Self.FK_CLIENTE_Tipo_Pago" FromRole="CLIENTE" ToRole="Tipo_Pago" />
+          <NavigationProperty Name="TIPONEGOCIO1" Relationship="Self.FK_CLIENTE_TIPONEGOCIO" FromRole="CLIENTE" ToRole="TIPONEGOCIO" />
+          <NavigationProperty Name="TIPOPRE" Relationship="Self.FK_CLIENTE_TIPOPRE" FromRole="CLIENTE" ToRole="TIPOPRE" />
+        </EntityType>
+        <EntityType Name="distrito">
+          <Key>
+            <PropertyRef Name="CodDis" />
+          </Key>
+          <Property Name="CodDis" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="codprovi" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CODPAIS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="iddepa" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_distrito" FromRole="distrito" ToRole="CLIENTE" />
+        </EntityType>
+        <EntityType Name="pais">
+          <Key>
+            <PropertyRef Name="CODPAIS" />
+          </Key>
+          <Property Name="DATETRANS" Type="DateTime" Precision="3" />
+          <Property Name="TRANS" Type="Boolean" />
+          <Property Name="ESTADO" Type="Boolean" />
+          <Property Name="DESPAIS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CODPAIS" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COD_EMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_pais" FromRole="pais" ToRole="CLIENTE" />
+        </EntityType>
+        <EntityType Name="paisdepa">
+          <Key>
+            <PropertyRef Name="iddepa" />
+          </Key>
+          <Property Name="iddepa" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="depa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="codpais" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="codempresa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="trans" Type="Boolean" />
+          <Property Name="datetrans" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_paisdepa" FromRole="paisdepa" ToRole="CLIENTE" />
+        </EntityType>
+        <EntityType Name="RUTA">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_RUTA" FromRole="RUTA" ToRole="CLIENTE" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tipo_Pago">
+          <Key>
+            <PropertyRef Name="CODTIPOPAGO" />
+          </Key>
+          <Property Name="DATETRANS" Type="DateTime" Precision="3" />
+          <Property Name="ESTADO" Type="Boolean" />
+          <Property Name="TRANS" Type="Boolean" />
+          <Property Name="DSTIPOPAGO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CODTIPOPAGO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_Tipo_Pago" FromRole="Tipo_Pago" ToRole="CLIENTE" />
+        </EntityType>
+        <EntityType Name="TIPONEGOCIO">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_TIPONEGOCIO" FromRole="TIPONEGOCIO" ToRole="CLIENTE" />
+        </EntityType>
+        <EntityType Name="TIPOPRE">
+          <Key>
+            <PropertyRef Name="CODTIPOPRE" />
+          </Key>
+          <Property Name="DATETRANS" Type="DateTime" Precision="3" />
+          <Property Name="TRANS" Type="Boolean" />
+          <Property Name="DSTIPOPRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CODTIPOPRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codmon" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="estado" Type="Boolean" />
+          <Property Name="CODEMPRESA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="APLIOTROSCTO" Type="Boolean" />
+          <Property Name="DS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_TIPOPRE" FromRole="TIPOPRE" ToRole="CLIENTE" />
+        </EntityType>
+        <EntityType Name="ACCESO">
+          <Key>
+            <PropertyRef Name="cdmodulo" />
+            <PropertyRef Name="activo" />
+          </Key>
+          <Property Name="CodEmpresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cdnivel" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="cdmodulo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="activo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CLIENTE_ciudad">
+          <End Role="ciudad" Type="Self.ciudad" Multiplicity="1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ciudad">
+              <PropertyRef Name="CODCIUDAD" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="CODCIUDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_distrito">
+          <End Role="distrito" Type="Self.distrito" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="distrito">
+              <PropertyRef Name="CodDis" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="coddis" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_pais">
+          <End Role="pais" Type="Self.pais" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pais">
+              <PropertyRef Name="CODPAIS" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="pais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_paisdepa">
+          <End Role="paisdepa" Type="Self.paisdepa" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="paisdepa">
+              <PropertyRef Name="iddepa" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="iddepa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_RUTA">
+          <End Role="RUTA" Type="Self.RUTA" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RUTA">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="RUTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_Tipo_Pago">
+          <End Role="Tipo_Pago" Type="Self.Tipo_Pago" Multiplicity="1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Pago">
+              <PropertyRef Name="CODTIPOPAGO" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="CODTIPOPAGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_TIPONEGOCIO">
+          <End Role="TIPONEGOCIO" Type="Self.TIPONEGOCIO" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPONEGOCIO">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="TIPONEGOCIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CLIENTE_TIPOPRE">
+          <End Role="TIPOPRE" Type="Self.TIPOPRE" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOPRE">
+              <PropertyRef Name="CODTIPOPRE" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="CODTIPOPRE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BDDISTRIBUCIONEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ciudad" EntityType="Self.ciudad" />
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+          <EntitySet Name="distrito" EntityType="Self.distrito" />
+          <EntitySet Name="pais" EntityType="Self.pais" />
+          <EntitySet Name="paisdepa" EntityType="Self.paisdepa" />
+          <EntitySet Name="RUTA" EntityType="Self.RUTA" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Tipo_Pago" EntityType="Self.Tipo_Pago" />
+          <EntitySet Name="TIPONEGOCIO" EntityType="Self.TIPONEGOCIO" />
+          <EntitySet Name="TIPOPRE" EntityType="Self.TIPOPRE" />
+          <EntitySet Name="ACCESO" EntityType="Self.ACCESO" />
+          <AssociationSet Name="FK_CLIENTE_ciudad" Association="Self.FK_CLIENTE_ciudad">
+            <End Role="ciudad" EntitySet="ciudad" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_distrito" Association="Self.FK_CLIENTE_distrito">
+            <End Role="distrito" EntitySet="distrito" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_pais" Association="Self.FK_CLIENTE_pais">
+            <End Role="pais" EntitySet="pais" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_paisdepa" Association="Self.FK_CLIENTE_paisdepa">
+            <End Role="paisdepa" EntitySet="paisdepa" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_RUTA" Association="Self.FK_CLIENTE_RUTA">
+            <End Role="RUTA" EntitySet="RUTA" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_Tipo_Pago" Association="Self.FK_CLIENTE_Tipo_Pago">
+            <End Role="Tipo_Pago" EntitySet="Tipo_Pago" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_TIPONEGOCIO" Association="Self.FK_CLIENTE_TIPONEGOCIO">
+            <End Role="TIPONEGOCIO" EntitySet="TIPONEGOCIO" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE_TIPOPRE" Association="Self.FK_CLIENTE_TIPOPRE">
+            <End Role="TIPOPRE" EntitySet="TIPOPRE" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BDDISTRIBUCIONModelStoreContainer" CdmEntityContainer="BDDISTRIBUCIONEntities">
+          <EntitySetMapping Name="ciudad">
+            <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.ciudad">
+              <MappingFragment StoreEntitySet="ciudad">
+                <ScalarProperty Name="CODCIUDAD" ColumnName="CODCIUDAD" />
+                <ScalarProperty Name="DESCIUDAD" ColumnName="DESCIUDAD" />
+                <ScalarProperty Name="CODPAIS" ColumnName="CODPAIS" />
+                <ScalarProperty Name="iddepa" ColumnName="iddepa" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="datetrans" ColumnName="datetrans" />
+                <ScalarProperty Name="trans" ColumnName="trans" />
+                <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLIENTE">
+            <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.CLIENTE">
+              <MappingFragment StoreEntitySet="CLIENTE">
+                <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+                <ScalarProperty Name="codcliente" ColumnName="codcliente" />
+                <ScalarProperty Name="DATETRANS" ColumnName="DATETRANS" />
+                <ScalarProperty Name="TRANS" ColumnName="TRANS" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="DESCUENTO" ColumnName="DESCUENTO" />
+                <ScalarProperty Name="CTA_LET" ColumnName="CTA_LET" />
+                <ScalarProperty Name="CTA_ANT" ColumnName="CTA_ANT" />
+                <ScalarProperty Name="CTA_VTA" ColumnName="CTA_VTA" />
+                <ScalarProperty Name="SALDODISPONIBLE" ColumnName="SALDODISPONIBLE" />
+                <ScalarProperty Name="MTOLIMCRED" ColumnName="MTOLIMCRED" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="ruc" ColumnName="ruc" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="CODTIPOPAGO" ColumnName="CODTIPOPAGO" />
+                <ScalarProperty Name="CODTIPCLI" ColumnName="CODTIPCLI" />
+                <ScalarProperty Name="CODCIUDAD" ColumnName="CODCIUDAD" />
+                <ScalarProperty Name="codvend" ColumnName="codvend" />
+                <ScalarProperty Name="CuotaT" ColumnName="CuotaT" />
+                <ScalarProperty Name="CuotaS" ColumnName="CuotaS" />
+                <ScalarProperty Name="cuotaD" ColumnName="cuotaD" />
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="razonsocial" ColumnName="razonsocial" />
+                <ScalarProperty Name="materno" ColumnName="materno" />
+                <ScalarProperty Name="paterno" ColumnName="paterno" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="codzona" ColumnName="codzona" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="TIPCREDFAC" ColumnName="TIPCREDFAC" />
+                <ScalarProperty Name="MONEDACRED" ColumnName="MONEDACRED" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="contacto" ColumnName="contacto" />
+                <ScalarProperty Name="telecont" ColumnName="telecont" />
+                <ScalarProperty Name="celucont" ColumnName="celucont" />
+                <ScalarProperty Name="emailcont" ColumnName="emailcont" />
+                <ScalarProperty Name="faxcliente" ColumnName="faxcliente" />
+                <ScalarProperty Name="DATOADJUNTO" ColumnName="DATOADJUNTO" />
+                <ScalarProperty Name="coddis" ColumnName="coddis" />
+                <ScalarProperty Name="iddepa" ColumnName="iddepa" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="creacion" ColumnName="creacion" />
+                <ScalarProperty Name="empleado" ColumnName="empleado" />
+                <ScalarProperty Name="RUTA" ColumnName="RUTA" />
+                <ScalarProperty Name="TIPONEGOCIO" ColumnName="TIPONEGOCIO" />
+                <ScalarProperty Name="CODTIPOPRE" ColumnName="CODTIPOPRE" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="imagen2" ColumnName="imagen2" />
+                <ScalarProperty Name="MPERCEP" ColumnName="MPERCEP" />
+                <ScalarProperty Name="ORT" ColumnName="ORT" />
+                <ScalarProperty Name="CODSegCliente" ColumnName="CODSegCliente" />
+                <ScalarProperty Name="CodCatCliente" ColumnName="CodCatCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="distrito">
+            <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.distrito">
+              <MappingFragment StoreEntitySet="distrito">
+                <ScalarProperty Name="CodDis" ColumnName="CodDis" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="codprovi" ColumnName="codprovi" />
+                <ScalarProperty Name="CODPAIS" ColumnName="CODPAIS" />
+                <ScalarProperty Name="iddepa" ColumnName="iddepa" />
+                <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pais">
+            <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.pais">
+              <MappingFragment StoreEntitySet="pais">
+                <ScalarProperty Name="DATETRANS" ColumnName="DATETRANS" />
+                <ScalarProperty Name="TRANS" ColumnName="TRANS" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="DESPAIS" ColumnName="DESPAIS" />
+                <ScalarProperty Name="CODPAIS" ColumnName="CODPAIS" />
+                <ScalarProperty Name="COD_EMPRESA" ColumnName="COD_EMPRESA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="paisdepa">
+            <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.paisdepa">
+              <MappingFragment StoreEntitySet="paisdepa">
+                <ScalarProperty Name="iddepa" ColumnName="iddepa" />
+                <ScalarProperty Name="depa" ColumnName="depa" />
+                <ScalarProperty Name="codpais" ColumnName="codpais" />
+                <ScalarProperty Name="codempresa" ColumnName="codempresa" />
+                <ScalarProperty Name="trans" ColumnName="trans" />
+                <ScalarProperty Name="datetrans" ColumnName="datetrans" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RUTA">
+            <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.RUTA">
+              <MappingFragment StoreEntitySet="RUTA">
+                <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_Pago">
+            <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.Tipo_Pago">
+              <MappingFragment StoreEntitySet="Tipo_Pago">
+                <ScalarProperty Name="DATETRANS" ColumnName="DATETRANS" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="TRANS" ColumnName="TRANS" />
+                <ScalarProperty Name="DSTIPOPAGO" ColumnName="DSTIPOPAGO" />
+                <ScalarProperty Name="CODTIPOPAGO" ColumnName="CODTIPOPAGO" />
+                <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPONEGOCIO">
+            <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.TIPONEGOCIO">
+              <MappingFragment StoreEntitySet="TIPONEGOCIO">
+                <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOPRE">
+            <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.TIPOPRE">
+              <MappingFragment StoreEntitySet="TIPOPRE">
+                <ScalarProperty Name="DATETRANS" ColumnName="DATETRANS" />
+                <ScalarProperty Name="TRANS" ColumnName="TRANS" />
+                <ScalarProperty Name="DSTIPOPRE" ColumnName="DSTIPOPRE" />
+                <ScalarProperty Name="CODTIPOPRE" ColumnName="CODTIPOPRE" />
+                <ScalarProperty Name="codmon" ColumnName="codmon" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="CODEMPRESA" ColumnName="CODEMPRESA" />
+                <ScalarProperty Name="APLIOTROSCTO" ColumnName="APLIOTROSCTO" />
+                <ScalarProperty Name="DS" ColumnName="DS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACCESO">
+            <EntityTypeMapping TypeName="BDDISTRIBUCIONModel.ACCESO">
+              <MappingFragment StoreEntitySet="ACCESO">
+                <ScalarProperty Name="CodEmpresa" ColumnName="CodEmpresa" />
+                <ScalarProperty Name="cdnivel" ColumnName="cdnivel" />
+                <ScalarProperty Name="cdmodulo" ColumnName="cdmodulo" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
