@@ -1,7 +1,6 @@
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaPresentacion\bin\Debug\CapaPresentacion.exe
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
-C:\C\PTODISTRIBUCION2\SLNPTO\CapaPresentacion\bin\Debug\CapaDatos.exe
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaPresentacion\bin\Debug\CapaNegocio.dll
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaPresentacion\bin\Debug\EntityFramework.dll
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaPresentacion\bin\Debug\EntityFramework.SqlServer.dll
@@ -14,3 +13,4 @@ C:\C\PTODISTRIBUCION2\SLNPTO\CapaPresentacion\bin\Debug\EntityFramework.SqlServe
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\C\PTODISTRIBUCION2\SLNPTO\CapaPresentacion\bin\Debug\CapaDatos.dll

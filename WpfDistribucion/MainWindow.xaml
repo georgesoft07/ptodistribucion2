@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfDistribucion.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDistribucion"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="421.522" Width="681.739">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="99*"/>
+            <ColumnDefinition Width="198*"/>
+            <ColumnDefinition Width="461*"/>
+            <ColumnDefinition Width="134*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dataGrid" ItemsSource="{Binding tiponegocioResgistrados}"   Grid.Column="2" HorizontalAlignment="Left" Height="207" Margin="10,10,0,0" VerticalAlignment="Top" Width="299" Grid.RowSpan="3"/>
+        <Button x:Name="button" Content="grabar" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="83" Click="button_Click"/>
+        <TextBox x:Name="textBox2" Text="{Binding nuevoTipoNegocio.codigo}"  Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="10,33,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.554,-3.271"/>
+        <TextBox x:Name="textBox"  Text="{Binding nuevoTipoNegocio.descripcion }"  Grid.Column="1" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.374,0.413"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="23,33,0,0" TextWrapping="Wrap" Text="Codigo" VerticalAlignment="Top" RenderTransformOrigin="0.424,-1.579" Height="25"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="0,17,0,0" TextWrapping="Wrap" Text="Descripcion" VerticalAlignment="Top" RenderTransformOrigin="0.424,-1.579" Height="25" Grid.Row="1" Width="71"/>
+
+
+    </Grid>
+</Window>

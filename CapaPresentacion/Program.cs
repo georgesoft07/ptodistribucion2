@@ -16,9 +16,8 @@ namespace CapaPresentacion
 
             IGestorDeTipoNegocio gestordetipoNegocio= new GestorDeTipoNegocio();
             NuevoTipoNegocio nuevoTipoNegocio = new NuevoTipoNegocio();
-            nuevoTipoNegocio.codEmpresa = "01";
-            nuevoTipoNegocio.codigo = "001";
-            nuevoTipoNegocio.descripcion = "tipodenegocio01";
+            nuevoTipoNegocio.codigo = "002";
+            nuevoTipoNegocio.descripcion = "tipodenegocio02";
             gestordetipoNegocio.CrearTipoNegocio(nuevoTipoNegocio);
 
         }

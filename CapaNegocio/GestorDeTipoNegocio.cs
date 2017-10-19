@@ -18,7 +18,7 @@ namespace CapaNegocio
             using (BDDISTRIBUCIONEntities Bd = new BDDISTRIBUCIONEntities())
             {
                 TIPONEGOCIO tiponegocio1 = new TIPONEGOCIO();
-                tiponegocio1.CODEMPRESA = nuevoTipoNegocio.codEmpresa;
+                tiponegocio1.CODEMPRESA = "01";
                 tiponegocio1.CODIGO = nuevoTipoNegocio.codigo;
                 tiponegocio1.DESCRIPCION = nuevoTipoNegocio.descripcion;
                 Bd.TIPONEGOCIO.Add(tiponegocio1);
@@ -27,6 +27,13 @@ namespace CapaNegocio
             }
         }
 
+        public List<TipoNegocioRegistrado> ListarTodosLosTipoNegocios()
+        {
+            using (BDDISTRIBUCIONEntities Bd = new BDDISTRIBUCIONEntities())
+            {
+                return Bd.TIPONEGOCIO.ToList().Select(x => ConvertirTipoNegocioA_DTO(x)).ToList();
+            }
+        }
 
         private TipoNegocioRegistrado ConvertirTipoNegocioA_DTO(TIPONEGOCIO tipoNegocio)
         {

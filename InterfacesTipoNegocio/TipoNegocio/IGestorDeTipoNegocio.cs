@@ -15,6 +15,6 @@ namespace InterfacesTipoNegocio.TipoNegocio
     {
 
         TipoNegocioRegistrado CrearTipoNegocio(NuevoTipoNegocio nuevoTipoNegocio);
-
+        List<TipoNegocioRegistrado> ListarTodosLosTipoNegocios();
     }
 }

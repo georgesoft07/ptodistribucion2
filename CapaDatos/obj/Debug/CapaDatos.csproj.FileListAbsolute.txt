@@ -1,10 +1,10 @@
-C:\C\PTODISTRIBUCION2\SLNPTO\CapaDatos\bin\Debug\CapaDatos.exe.config
-C:\C\PTODISTRIBUCION2\SLNPTO\CapaDatos\bin\Debug\CapaDatos.exe
+C:\C\PTODISTRIBUCION2\SLNPTO\CapaDatos\bin\Debug\CapaDatos.dll.config
+C:\C\PTODISTRIBUCION2\SLNPTO\CapaDatos\bin\Debug\CapaDatos.dll
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaDatos\bin\Debug\CapaDatos.pdb
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaDatos\bin\Debug\EntityFramework.dll
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaDatos\bin\Debug\EntityFramework.SqlServer.dll
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaDatos\bin\Debug\EntityFramework.xml
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaDatos\bin\Debug\EntityFramework.SqlServer.xml
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
-C:\C\PTODISTRIBUCION2\SLNPTO\CapaDatos\obj\Debug\CapaDatos.exe
+C:\C\PTODISTRIBUCION2\SLNPTO\CapaDatos\obj\Debug\CapaDatos.dll
 C:\C\PTODISTRIBUCION2\SLNPTO\CapaDatos\obj\Debug\CapaDatos.pdb
