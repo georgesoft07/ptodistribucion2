@@ -23,7 +23,9 @@ namespace CapaDatos
         public string CODEMPRESA { get; set; }
         public string CODIGO { get; set; }
         public string DESCRIPCION { get; set; }
-    
+   
+        public string DESCRIPCION2 { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CLIENTE> CLIENTE { get; set; }
     }

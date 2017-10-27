@@ -49,7 +49,6 @@ namespace WpfDistribucion.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
 
-
         public ObservableCollection<TipoNegocioRegistrado> tiponegocioResgistrados { get; set; }
         private IGestorDeTipoNegocio _gestorDeTipoNegocio = new GestorDeTipoNegocio();
 

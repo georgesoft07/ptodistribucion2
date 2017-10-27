@@ -8,7 +8,6 @@ using InterfacesTipoNegocio.TipoNegocio.Peticiones;
 using InterfacesTipoNegocio.TipoNegocio.Repuestas;
 using InterfacesTipoNegocio.TipoNegocio;
 
-
 namespace CapaNegocio
 {
     public class GestorDeTipoNegocio : IGestorDeTipoNegocio
@@ -43,6 +42,5 @@ namespace CapaNegocio
             tipoNegocioRegistrado.descripcion= tipoNegocio.DESCRIPCION;
             return tipoNegocioRegistrado;
         }
-
     }
 }
